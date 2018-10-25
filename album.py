@@ -1,5 +1,6 @@
 #versione OOP
 import os.path
+import sys
 
 class Album:
 
@@ -20,27 +21,32 @@ class Album:
 
     def add_carta(self, k):
         '''aggiunge all'album un'unità della figurina #k'''
-        self.carte[k] += 1
-        self.write()
-        print("Ho aggiunto la figurina #{}, in tutto ne ho {}.".format(k, self.carte[k]))
+        if k not in self.carte.keys():
+            print("L'album ha {} figurine, non esiste la #{}".format(len(self.carte), k))
+        else:
+            self.carte[k] += 1
+            self.write()
+            print("Ho aggiunto la figurina #{}, in tutto ne ho {}.".format(k, self.carte[k]))
 
     def sottrai_carta(self, k):
         '''sottrae all'album un'unità della figurina #k'''
-
-        if self.carte[k] > 1:
-            self.carte[k] -= 1
-            self.write()
-            print("Ho tolto la figurina #{}, in tutto ne ho {}.".format(k, self.carte[k]))
-        elif self.carte[k] == 1:
-            togliere = input("Abbiamo solo una figurina #{}. Toglierla ugualmente? Y/N ".format(k))
-            if togliere.lower() == ("y"):
+        if k not in self.carte.keys():
+            print("L'album ha {} figurine, non esiste la #{}".format(len(self.carte), k))
+        else:
+            if self.carte[k] > 1:
                 self.carte[k] -= 1
                 self.write()
-                print("Ho tolto l'unica figurina #{} che avevo.".format(k))
+                print("Ho tolto la figurina #{}, in tutto ne ho {}.".format(k, self.carte[k]))
+            elif self.carte[k] == 1:
+                togliere = input("Abbiamo solo una figurina #{}. Toglierla ugualmente? Y/N ".format(k))
+                if togliere.lower() == ("y"):
+                    self.carte[k] -= 1
+                    self.write()
+                    print("Ho tolto l'unica figurina #{} che avevo.".format(k))
+                else:
+                    print("Non ho tolto l'unica figurina #{}".format(k))
             else:
-                print("Non ho tolto l'unica figurina #{}".format(k))
-        else:
-            print("Non è possibile togliere la figurina #{} perché è mancante".format(k))
+                print("Non è possibile togliere la figurina #{} perché è mancante".format(k))
 
     def mancanti(self):
         '''ritorna una list delle figurine mancanti'''
@@ -113,3 +119,6 @@ def string_to_int_list():
     for item in string_list:
         int_list.append(int(item))
     return int_list
+
+if __name__ == '__main__':
+     Album(sys.argv[1]).aggiornamento()
