@@ -7,7 +7,7 @@ There are two different manage type:
  1. from the shell
  2. graphically
 
-1. For managing new stickers acquisitions and changes, from the shell you can digit:
+For managing new stickers acquisitions and changes, from the shell you can digit:
 
 ```
 python3 album.py fig.txt
