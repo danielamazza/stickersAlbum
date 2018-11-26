@@ -3,15 +3,19 @@ Python program to manage a **stickers album**.
 
 The file 'fig.txt' is an example that stores the IDs of the stickers and, for every ID, the amount of stickers you own.
 
-For managing new stickers acquisitions and changes, from the shell you can digit:
+There are two different manage type:
+ 1. from the shell
+ 2. graphically
+
+1. For managing new stickers acquisitions and changes, from the shell you can digit:
 
 ```
-python album.py fig.txt
+python3 album.py fig.txt
 ```
 
 If you want to initialize a new album, go to the python shell and digit:
 
-```python
+```python3
 from album import *
 crea_file([filename],[number of stickers that make up the album])
 
