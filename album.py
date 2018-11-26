@@ -98,13 +98,13 @@ class Album:
 def crea_file(filename, n_figurine):
     procedere = not(os.path.exists(filename))
     if os.path.exists(filename):
-        sovrascrivere = input(f"Il file {filename} esiste già. Sovrascriverlo? Y/N ")
+        sovrascrivere = input("Il file {} esiste già. Sovrascriverlo? Y/N ".format(filename))
         if sovrascrivere.lower() == ("y"):
             procedere = True
     if procedere:
         testo_file = ""
         for i in range(n_figurine):
-            testo_file = testo_file + f"{i+1}:0\n"
+            testo_file = testo_file + "{}:0\n".format(i+1)
         with open(filename,"w") as file:
             file.write(testo_file)
             file.close()

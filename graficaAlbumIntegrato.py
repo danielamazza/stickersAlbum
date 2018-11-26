@@ -31,10 +31,10 @@ class MyApp(tk.Tk):
 
         cb_var1 = tk.IntVar()
 
-        tk.Label(frame1, text="Scrivi il n. delle figurine separate da spazio").grid(row=0, sticky=tk.EW)
+        tk.Label(frame1, text="Scrivi il n. della figurina e clicca sul pulsante corrispondente").grid(row=0, sticky=tk.EW)
 
-        tk.Label(frame1, text="Figurine da aggiungere").grid(row=1, sticky=tk.W)
-        tk.Label(frame1, text="Figurine da togliere").grid(row=2, sticky=tk.W)
+        tk.Label(frame1, text="Figurina da aggiungere").grid(row=1, sticky=tk.W)
+        tk.Label(frame1, text="Figurina da togliere").grid(row=2, sticky=tk.W)
         self.var1 = tk.StringVar()
         entry1 = tk.Entry(frame1, textvariable = self.var1)
         entry1.grid(row=1, column=1, sticky=tk.E)
@@ -75,9 +75,9 @@ class MyApp(tk.Tk):
         img_array = []
         for i in carte:
             if carte[i] == 0:
-                img_array.append("linus-"+str(i).zfill(2)+"-t.png")
+                img_array.append("images/linus-"+str(i).zfill(2)+"-t.png")
             else:
-                img_array.append("linus-"+str(i).zfill(2)+".png")
+                img_array.append("images/linus-"+str(i).zfill(2)+".png")
 
         count = 0
         self.button = [tk.Button() for _ in range(16)]
@@ -122,12 +122,12 @@ class MyApp(tk.Tk):
         myalbum.add_carta(n_carta)
         quant_carta = carte[n_carta]
         if quant_carta == 0:
-            fig=tk.PhotoImage(file="linus-"+str(n_carta).zfill(2)+"-t.png")
+            fig=tk.PhotoImage(file="images/linus-"+str(n_carta).zfill(2)+"-t.png")
             self.button[n_carta-1].config(image=fig)
             self.button[n_carta-1].config(text="fig#%d, %d" % (n_carta, quant_carta))
             self.button[n_carta-1].image=fig
         else:
-            fig=tk.PhotoImage(file="linus-"+str(n_carta).zfill(2)+".png")
+            fig=tk.PhotoImage(file="images/linus-"+str(n_carta).zfill(2)+".png")
             self.button[n_carta-1].config(image=fig)
             self.button[n_carta-1].config(text="fig#%d, %d" % (n_carta, quant_carta))
             self.button[n_carta-1].image=fig
@@ -141,12 +141,12 @@ class MyApp(tk.Tk):
         self.button[n_carta-1].config(text="fig#%d, %d" % (n_carta, carte[n_carta]))
         quant_carta = carte[n_carta]
         if quant_carta == 0:
-            fig=tk.PhotoImage(file="linus-"+str(n_carta).zfill(2)+"-t.png")
+            fig=tk.PhotoImage(file="images/linus-"+str(n_carta).zfill(2)+"-t.png")
             self.button[n_carta-1].config(image=fig)
             self.button[n_carta-1].config(text="fig#%d, %d" % (n_carta, quant_carta))
             self.button[n_carta-1].image=fig
         else:
-            fig=tk.PhotoImage(file="linus-"+str(n_carta).zfill(2)+".png")
+            fig=tk.PhotoImage(file="images/linus-"+str(n_carta).zfill(2)+".png")
             self.button[n_carta-1].config(image=fig)
             self.button[n_carta-1].config(text="fig#%d, %d" % (n_carta, quant_carta))
             self.button[n_carta-1].image=fig
