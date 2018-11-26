@@ -4,10 +4,10 @@ Python program to manage a **stickers album**.
 The file 'fig.txt' is an example that stores the IDs of the stickers and, for every ID, the amount of stickers you own.
 
 There are two different manage type:
- 1. from the shell
- 2. graphically
+ 1. from the **shell**
+ 2. **graphically**
 
-For managing new stickers acquisitions and changes, from the shell you can digit:
+For managing new stickers acquisitions and changes **from the shell** you can digit:
 
 ```
 python3 album.py fig.txt
