@@ -7,6 +7,7 @@ There are two different manage type:
  1. from the **shell**
  2. **graphically**
 
+## From the shell
 For managing new stickers acquisitions and changes **from the shell** you can digit:
 
 ```
@@ -26,5 +27,14 @@ This creates a file [filename] that stores the IDs of the stickers and, for ever
 For managing new stickers acquisitions and changes, from the shell you can digit:
 
 ```
-python album.py [filename]
+python3 album.py [filename]
 ```
+## Graphically
+The fig.txt file is the record of the stickers.
+The images folder contains two images for every sticker, one normal an one semitransparent (for representing missing sticker).
+For launching the program from the shell digit: 
+
+```
+python3 graficaAlbumIntegrato.py
+```
+
